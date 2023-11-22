@@ -1,0 +1,106 @@
+* {
+    padding:0;
+    margin:0;
+}
+
+body {
+    background-color: #024D90;
+}
+
+/* Halaman Index */
+.index {
+    background-color:black;
+}
+
+.home {
+    margin-top: 15%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.title {
+    padding-bottom: 5rem;
+}
+
+.title h1 {
+    color:white;
+}
+
+.enter {
+    text-align: center;
+}
+
+.enter a {
+    color:white;
+    text-decoration: none;
+    padding:10px 50px;
+    border: 2px solid white;
+    border-radius: 100px;
+}
+
+.enter a:hover{
+    background-color: white;
+    color: black;
+}
+
+/* Halaman Peta Cluster */
+.main {
+    display:flex;
+    align-items :center;
+    padding:30px;
+    background: linear-gradient(180deg, #00A9FF 26.56%, #024D90 100%);
+}
+
+.sidebar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 210px;
+    height: 610px;
+    background-color: #f1f1f1;
+    border-radius: 12px;
+}
+
+.sidebar li a{
+    display: block;
+    color: #000;
+    padding: 18px 25px;
+    text-decoration: none;
+    font-family: arial;
+    font-size: large;
+    font-weight: 200;
+}
+
+li a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.sidebar li a:hover {
+    background-color: #a0e9ff;
+    color: navy;
+    border-radius: 12px;
+  }
+
+.peta{
+    margin:auto;
+}
+
+#noted {
+    position:absolute;
+    color:white;
+}
+
+.info {
+    background-color: transparent;
+    width:200px;
+    height:200px;
+    padding: 30px;
+}
+
+#stat {
+    display:none;
+}
+
