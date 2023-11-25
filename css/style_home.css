@@ -49,6 +49,7 @@ body {
     display: flex;
     flex: 1;
     justify-content: center;
+    margin-left: 210px;
     align-items: center;
     height: calc(100vh - 80px);
 }
@@ -97,6 +98,10 @@ li a:hover {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .gambar {
+        margin-left: 0;
     }
 
     .sidebar {
