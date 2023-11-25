@@ -1,0 +1,65 @@
+.index {
+    background-color: black;
+}
+
+.home {
+    margin-top: 15%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.home img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.title {
+    padding-bottom: 5rem;
+}
+
+.title h1 {
+    color: white;
+}
+
+.enter {
+    text-align: center;
+}
+
+.enter a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 50px;
+    border: 2px solid white;
+    border-radius: 100px;
+}
+
+.enter a:hover {
+    background-color: white;
+    color: black;
+}
+
+/* CSS Responsive */
+
+@media screen and (max-width: 768px) {
+    .home {
+        flex-direction: column;
+    }
+
+    .title {
+        padding-bottom: 1rem;
+    }
+
+    .title h1 {
+        font-size: 26px;
+    }
+
+    /* kalau mau ganti lebar sama tinggi image di index.html pas responsive */
+    /* .home img {
+        width: 300px;
+        height: 300px;
+    } */
+}

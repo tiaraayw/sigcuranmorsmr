@@ -45,6 +45,21 @@ body {
     z-index: 100;
 }
 
+.gambar {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+}
+
+.gambar img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -71,39 +86,6 @@ li a:hover {
     background-color: #a0e9ff;
     color: white;
     border-radius: 0 12px 12px 0;
-}
-
-.gambar {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 80px);
-}
-
-.gambar img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-}
-
-#noted {
-    position: absolute;
-    color: white;
-}
-
-.info {
-    position: absolute;
-    background-color: transparent;
-    right: 50px; /* buat gerakin info nya */
-    width: 200px;
-    height: 200px;
-    padding: 30px;
-}
-
-#stat {
-    display: none;
 }
 
 @media screen and (max-width: 768px) {
