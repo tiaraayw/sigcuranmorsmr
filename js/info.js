@@ -57,7 +57,6 @@ const infoCluster = {
 
 
 function informasi(kecamatan) {
-
     document.getElementById("info").style.backgroundColor = "white";
     document.getElementById("stat").style.display = "block";
     document.getElementById("Kecamatan").innerHTML = "Kecamatan " + kecamatan;
@@ -65,10 +64,11 @@ function informasi(kecamatan) {
     document.getElementById("Koordinat").innerHTML = "Kepadatan : " + infoCluster[kecamatan]['X'] + "";
     document.getElementById("Luas").innerHTML = "Luas :" + infoCluster[kecamatan]['Luas'];
     document.getElementById("jalan").insertAdjacentHTML("beforeend", infoCluster[kecamatan]['jalan']);
+    document.getElementById("info").classList.add("visible")
 }
 
 function reset() {
-    document.getElementById("info").style.backgroundColor = "transparent";
+    document.getElementById("info").style.backgroundColor = "blue";
     document.getElementById("stat").style.display = "";
     document.getElementById("Kecamatan").innerHTML = "";
     document.getElementById("Koordinat").innerHTML = "";
@@ -84,3 +84,36 @@ let hamBtn = document.querySelector("#ham");
 hamBtn.addEventListener("click", () => {
     sidebar.classList.toggle("open");
 })
+
+// close sidebar when click outside
+
+document.addEventListener("click", (event) => {
+    const isClickInsideSidebar = sidebar.contains(event.target);
+    const isClickOnHamBtn = hamBtn.contains(event.target);
+
+    if (!isClickInsideSidebar && !isClickOnHamBtn) {
+        sidebar.classList.remove("open");
+    }
+});
+
+// // Membuat objek media query
+// const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+// // Fungsi yang akan dijalankan saat perubahan kondisi media query
+// const handleMediaQueryChange = (mediaQueryList) => {
+//     if (mediaQueryList.matches) {
+//         // Kondisi media query cocok (misalnya, layar berukuran <= 768px)
+//         console.log("Layar berukuran kecil (max-width: 768px)");
+//         // Tambahkan kode atau event yang ingin Anda lakukan pada kondisi tertentu di sini
+//     } else {
+//         // Kondisi media query tidak cocok
+//         console.log("Layar berukuran besar (lebih dari 768px)");
+//         // Tambahkan kode atau event yang ingin Anda lakukan pada kondisi tertentu di sini
+//     }
+// };
+
+// // Menambahkan listener ke perubahan media query
+// mediaQuery.addListener(handleMediaQueryChange);
+
+// // Memanggil fungsi handleMediaQueryChange untuk mengecek kondisi awal
+// handleMediaQueryChange(mediaQuery);

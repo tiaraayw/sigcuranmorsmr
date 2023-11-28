@@ -130,4 +130,15 @@ li a:hover {
     .sidebar.open {
         margin-left: 0;
     }
+
+    .info {
+        width: fit-content;
+        height: fit-content;
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .ham {
+        font-size: 20px;
+    }
 }
