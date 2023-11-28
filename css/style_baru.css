@@ -177,6 +177,6 @@ li a:hover {
     }
 
     .infoResponsive.open {
-        margin-top: -440px; /* buat gerakin naik turun info responsif nya */
+        margin-top: -440px; /* buat gerakin posisi info responsif nya setelah turun*/
     }
 }
