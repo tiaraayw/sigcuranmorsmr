@@ -55,37 +55,61 @@ const infoCluster = {
 
 }
 
-
-function informasi(kecamatan) {
-    document.getElementById("info").style.backgroundColor = "white";
-    document.getElementById("stat").style.display = "block";
-    document.getElementById("Kecamatan").innerHTML = "Kecamatan " + kecamatan;
-    // Disini kalau mau ganti format penulisan koordinatnya
-    document.getElementById("Koordinat").innerHTML = "Kepadatan : " + infoCluster[kecamatan]['X'] + "";
-    document.getElementById("Luas").innerHTML = "Luas :" + infoCluster[kecamatan]['Luas'];
-    document.getElementById("jalan").insertAdjacentHTML("beforeend", infoCluster[kecamatan]['jalan']);
-    document.getElementById("info").classList.add("visible")
-}
-
-function reset() {
-    document.getElementById("info").style.backgroundColor = "blue";
-    document.getElementById("stat").style.display = "";
-    document.getElementById("Kecamatan").innerHTML = "";
-    document.getElementById("Koordinat").innerHTML = "";
-    document.getElementById("Luas").innerHTML = "";
-    document.getElementById("jalan").innerHTML = "";
-}
-
-// sidebar logic
+const mediaQueryResponsive = window.matchMedia("(max-width: 768px)");
 
 let sidebar = document.querySelector(".sidebar");
 let hamBtn = document.querySelector("#ham");
+let infoResponsiveModal = document.querySelector("#infoResponsive");
+
+function informasi(kecamatan) {
+    if (mediaQueryResponsive.matches) {
+        console.log('informasi should not be pressed')
+    } else {
+        document.getElementById("info").style.backgroundColor = "white";
+        document.getElementById("stat").style.display = "block";
+        document.getElementById("Kecamatan").innerHTML = "Kecamatan " + kecamatan;
+        // Disini kalau mau ganti format penulisan koordinatnya
+        document.getElementById("Koordinat").innerHTML = "Kepadatan : " + infoCluster[kecamatan]['X'] + "";
+        document.getElementById("Luas").innerHTML = "Luas :" + infoCluster[kecamatan]['Luas'];
+        document.getElementById("jalan").insertAdjacentHTML("beforeend", infoCluster[kecamatan]['jalan']);
+    }
+}
+
+function reset() {
+    if (mediaQueryResponsive.matches) {
+        console.log('reset should not be pressed')
+    } else {
+        document.getElementById("info").style.backgroundColor = "transparent";
+        document.getElementById("stat").style.display = "";
+        document.getElementById("Kecamatan").innerHTML = "";
+        document.getElementById("Koordinat").innerHTML = "";
+        document.getElementById("Luas").innerHTML = "";
+        document.getElementById("jalan").innerHTML = "";
+    }
+}
+
+function infoResponsiveOnClick(kecamatan) {
+    if (mediaQueryResponsive.matches) {
+        console.log("kecamatan", kecamatan)
+        document.getElementById("KecamatanResponsive").innerHTML = "";
+        document.getElementById("KoordinatResponsive").innerHTML = "";
+        document.getElementById("LuasResponsive").innerHTML = "";
+        document.getElementById("jalanResponsive").innerHTML = "";
+
+        document.getElementById("KecamatanResponsive").innerHTML = "Kecamatan " + kecamatan;
+        document.getElementById("KoordinatResponsive").innerHTML = "Kepadatan : " + infoCluster[kecamatan]['X'] + "";
+        document.getElementById("LuasResponsive").innerHTML = "Luas :" + infoCluster[kecamatan]['Luas'];
+        document.getElementById("jalanResponsive").insertAdjacentHTML("beforeend", infoCluster[kecamatan]['jalan']);
+        infoResponsiveModal.classList.add("open");
+    } else {
+        console.log('infoResponsiveOnClick should not be pressed')
+    }
+
+}
 
 hamBtn.addEventListener("click", () => {
     sidebar.classList.toggle("open");
 })
-
-// close sidebar when click outside
 
 document.addEventListener("click", (event) => {
     const isClickInsideSidebar = sidebar.contains(event.target);
@@ -96,24 +120,10 @@ document.addEventListener("click", (event) => {
     }
 });
 
-// // Membuat objek media query
-// const mediaQuery = window.matchMedia("(max-width: 768px)");
-
-// // Fungsi yang akan dijalankan saat perubahan kondisi media query
-// const handleMediaQueryChange = (mediaQueryList) => {
-//     if (mediaQueryList.matches) {
-//         // Kondisi media query cocok (misalnya, layar berukuran <= 768px)
-//         console.log("Layar berukuran kecil (max-width: 768px)");
-//         // Tambahkan kode atau event yang ingin Anda lakukan pada kondisi tertentu di sini
-//     } else {
-//         // Kondisi media query tidak cocok
-//         console.log("Layar berukuran besar (lebih dari 768px)");
-//         // Tambahkan kode atau event yang ingin Anda lakukan pada kondisi tertentu di sini
-//     }
-// };
-
-// // Menambahkan listener ke perubahan media query
-// mediaQuery.addListener(handleMediaQueryChange);
-
-// // Memanggil fungsi handleMediaQueryChange untuk mengecek kondisi awal
-// handleMediaQueryChange(mediaQuery);
+document.getElementById("infoResponsiveClose").addEventListener("click", () => {
+    infoResponsiveModal.classList.remove("open");
+    document.getElementById("KecamatanResponsive").innerHTML = "";
+    document.getElementById("KoordinatResponsive").innerHTML = "";
+    document.getElementById("LuasResponsive").innerHTML = "";
+    document.getElementById("jalanResponsive").innerHTML = "";
+})

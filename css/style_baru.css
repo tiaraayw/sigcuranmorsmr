@@ -98,10 +98,16 @@ li a:hover {
 .info {
     position: absolute;
     background-color: transparent;
-    left: calc(100% - 500px); /* buat gerakin info nya */
-    width: 200px;
-    height: 200px;
+    left: calc(
+        100% - 360px
+    ); /* adjust ukuran yang 360px buat gerakin info nya kiri kanan*/
+    width: fit-content;
+    height: fit-content;
     padding: 30px;
+}
+
+.infoResponsive {
+    display: none;
 }
 
 #stat {
@@ -109,8 +115,14 @@ li a:hover {
 }
 
 @media screen and (max-width: 768px) {
+    .header {
+        text-align: center;
+    }
+
     .header h2 {
         font-size: 18px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .ham {
@@ -140,5 +152,31 @@ li a:hover {
 
     .ham {
         font-size: 20px;
+    }
+
+    .wrapperInfoClose {
+        top: 5px;
+        right: 5px;
+        position: absolute;
+    }
+
+    #infoResponsiveClose {
+        font-size: 24px;
+    }
+
+    .infoResponsive {
+        display: block;
+        position: absolute;
+        background-color: white;
+        width: fit-content;
+        height: fit-content;
+        font-size: 12px;
+        padding: 30px;
+        transition: all 0.5s ease;
+        margin-top: -1200px;
+    }
+
+    .infoResponsive.open {
+        margin-top: -440px; /* buat gerakin naik turun info responsif nya */
     }
 }
