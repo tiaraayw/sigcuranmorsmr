@@ -9,7 +9,8 @@ body {
 }
 
 .header {
-    position: absolute;
+    position: fixed;
+    top: 10;
     width: calc(100% - 40px);
     background-color: white;
     border-radius: 12px;
@@ -34,7 +35,8 @@ body {
 }
 
 .sidebar {
-    position: absolute;
+    position: fixed;
+    top: 10;
     margin: 0;
     padding: 0;
     width: 210px;
