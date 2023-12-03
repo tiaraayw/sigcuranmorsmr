@@ -93,6 +93,36 @@ li a:hover {
     height: auto;
 }
 
+.infolegend{
+    position: absolute;
+    top: 70px;
+    left: 230px;
+    font-size: 22px;
+    font-weight: 100;
+    background-color: whitesmoke;
+    width: 152px;
+    height: 138px;
+    padding: 5px;
+}
+
+.lirawan{
+    font-size: 22px;
+    font-weight: 100;
+    color: red;
+}
+
+.lickprawan{
+    font-size: 22px;
+    font-weight: 100;
+    color: rgb(219, 205, 4);
+}
+
+.likrgrawan{
+    font-size: 22px;
+    font-weight: 100;
+    color: green;
+}
+
 #noted {
     position: absolute;
     color: white;
