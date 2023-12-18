@@ -61,21 +61,21 @@ let sidebar = document.querySelector(".sidebar");
 let hamBtn = document.querySelector("#ham");
 let infoResponsiveModal = document.querySelector("#infoResponsive");
 
-function informasi(kecamatan) {
+function informasi(kecamatan) { // untuk ubah konten dari objek infoCluster & kondisi media query
     if (mediaQueryResponsive.matches) {
         console.log('informasi should not be pressed')
     } else {
         document.getElementById("info").style.backgroundColor = "white";
         document.getElementById("stat").style.display = "block";
         document.getElementById("Kecamatan").innerHTML = "Kecamatan " + kecamatan;
-        // Disini kalau mau ganti format penulisan koordinatnya
+        // Buat ganti format penulisan koordinatnya
         document.getElementById("Koordinat").innerHTML = "Kepadatan : " + infoCluster[kecamatan]['X'] + "";
         document.getElementById("Luas").innerHTML = "Luas :" + infoCluster[kecamatan]['Luas'];
         document.getElementById("jalan").insertAdjacentHTML("beforeend", infoCluster[kecamatan]['jalan']);
     }
 }
 
-function reset() {
+function reset() { // untuk ngembalikan reset elemen2 ke keadaan awal
     if (mediaQueryResponsive.matches) {
         console.log('reset should not be pressed')
     } else {
@@ -88,7 +88,7 @@ function reset() {
     }
 }
 
-function infoResponsiveOnClick(kecamatan) {
+function infoResponsiveOnClick(kecamatan) { //untuk skema klik pd kecamatan dan menampilkan informasi
     if (mediaQueryResponsive.matches) {
         console.log("kecamatan", kecamatan)
         document.getElementById("KecamatanResponsive").innerHTML = "";
@@ -111,7 +111,7 @@ hamBtn.addEventListener("click", () => {
     sidebar.classList.toggle("open");
 })
 
-document.addEventListener("click", (event) => {
+document.addEventListener("click", (event) => { 
     const isClickInsideSidebar = sidebar.contains(event.target);
     const isClickOnHamBtn = hamBtn.contains(event.target);
 
@@ -126,20 +126,20 @@ document.getElementById("infoResponsiveClose").addEventListener("click", () => {
     document.getElementById("KoordinatResponsive").innerHTML = "";
     document.getElementById("LuasResponsive").innerHTML = "";
     document.getElementById("jalanResponsive").innerHTML = "";
-})
+}) //buat close infor responsif
 
 var acc = document.getElementsByClassName("accordion");
 var i, j;
 
 for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
-        this.classList.toggle("active"); // Menggunakan toggle untuk menambah atau menghapus class "active"
+        this.classList.toggle("active"); // menggunakan toggle untuk menambah class active
 
         for (j = 0; j < acc.length; j++) {
             if (acc[j] != this && acc[j].classList.contains("active")) {
                 acc[j].classList.remove("active");
                 acc[j].nextElementSibling.style.maxHeight = null;
-            }
+            } // buat hps class active nya
         }
 
         var panel = this.nextElementSibling;
@@ -147,6 +147,6 @@ for (i = 0; i < acc.length; i++) {
             panel.style.maxHeight = null;
         } else {
             panel.style.maxHeight = panel.scrollHeight + "px";
-        }
+        } // utk atur tinggi panel toggle nya
     });
 }

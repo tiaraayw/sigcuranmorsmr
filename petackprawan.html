@@ -12,7 +12,7 @@
     </head>
     <body>
         <div class="custom-header">
-            <h2 style="color: #000">Peta Cukup Rawan Kota Samarinda</h2>
+            <h2 style="color: #000">Peta Cukup Rawan Curanmor Kota Samarinda</h2>
             <div class="ham">
                 <i class="bx bx-menu" id="ham"></i>
             </div>
@@ -36,16 +36,17 @@
 
             <div class="gambar">
                 <img
-                    src="image/kuning.JPG"
+                    src="image/kuning.jpg"
                     alt="cluster"
                     usemap="#clustermap"
                 />
                 <p id="noted"></p>
 
-                <!-- Bisa di kurangi atau ditambah sesuai gambar map yang kamu tampilkan -->
+                <!-- Bisa di kurangi atau ditambah sesuai gambar map yang ditampilkan -->
                 <map name="clustermap">
                     <area
-                        shape="circle"
+                        target="_self"
+                        shape="poly"
                         alt="Samarinda Kota"
                         id="Samarinda Kota"
                         onclick="infoResponsiveOnClick(this.id)"
