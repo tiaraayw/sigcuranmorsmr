@@ -93,7 +93,7 @@ li a:hover {
     height: auto;
 }
 
-.infolegend{
+.infolegend {
     position: absolute;
     top: 70px;
     right: 12px;
@@ -105,19 +105,19 @@ li a:hover {
     padding: 0;
 }
 
-.lirawan{
+.lirawan {
     font-size: 20px;
     font-weight: 80;
     color: red;
 }
 
-.lickprawan{
+.lickprawan {
     font-size: 20px;
     font-weight: 80;
     color: rgb(219, 205, 4);
 }
 
-.likrgrawan{
+.likrgrawan {
     font-size: 20px;
     font-weight: 80;
     color: green;
@@ -271,5 +271,9 @@ li a:hover {
     .accordion.active:after {
         content: "\2796";
         color: #000;
+    }
+
+    .infolegend {
+        display: none;
     }
 }
